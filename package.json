@@ -1,0 +1,30 @@
+{
+  "name": "auroratube-userservice",
+  "version": "1.0.0",
+  "description": "user information delivery service for AuroraTube",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aurora-Borealis-hr/auroratube-userservice.git"
+  },
+  "keywords": [
+    "youtube",
+    "users",
+    "demographic",
+    "microservice",
+    "tags",
+    "userid"
+  ],
+  "author": "Eric Chi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aurora-Borealis-hr/auroratube-userservice/issues"
+  },
+  "homepage": "https://github.com/Aurora-Borealis-hr/auroratube-userservice#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
