@@ -1,16 +1,11 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/userservice');
 
 var UserSchema = new mongoose.Schema({
   username:  String,
-  password: String,
-  salt:   String,
-  subscriptions: [{ channelId: String}],
-  tags: [{tag: String}],
-  views: [{videoId: String, date: Date}],
-  firstName: String,
-  lastName: String,
+  subscriptions: [],
+  tags: [],
   country:   String,
   state: String,
   city: String,
