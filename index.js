@@ -6,14 +6,21 @@ const User = require('./models/User.js')
 
 //parses incoming request body, only json because we are expecting put request from a server side application
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.put('/user/:userId', function(req, res) {
   let {body} = req;
-  let {video, tags} = body;
+  let {videos, tags} = body;
   let id = req.params.userId;
 
-  User.update({ _id: id }, { $push: { views: video, tags: tags}}, function(err, res) {
-    console.log(res, "<========user updated!")
+  console.log(videos, "<===video!!", tags, "<=====tags")
+  User.findByIdAndUpdate({ _id: id }, { $push: { subscriptions: videos, tags: tags}}, {upsert: true}, function(err, result) {
+    if (err) {
+      console.error(err)
+    } else {
+    console.log(result, "<========user updated!")
+    res.send(result)
+    }
   })
 })
 
